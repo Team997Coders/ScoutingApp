@@ -1,4 +1,4 @@
-package org.team997.spartanscout;
+package org.team997.spartanscout.transfer;
 
 import android.content.Context;
 import android.widget.Toast;
