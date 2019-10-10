@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DeepSpace">
+
+    <TextView
+        android:id="@+id/autoHabText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Auto Hab\n0"
+        android:textAlignment="center"
+        android:textColor="#232323"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.054" />
+
+    <Button
+        android:id="@+id/autoHabPlus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:textColor="#232323"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/autoHabText"
+        app:layout_constraintLeft_toRightOf="@+id/autoHabText"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/autoHabText" />
+    <Button
+        android:id="@+id/autoHabMinus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:textColor="#232323"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/autoHabText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/autoHabText"
+        app:layout_constraintTop_toTopOf="@+id/autoHabText" />
+
+    <!-- Cargo -->
+    <TextView
+        android:id="@+id/cargoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/deepspace_element_separation"
+        android:text="Cargo Scored\n0"
+        android:textAlignment="center"
+        android:textColor="#232323"
+        android:textSize="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/autoHabText" />
+    <Button
+        android:id="@+id/cargoPlus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:textColor="#232323"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cargoText"
+        app:layout_constraintLeft_toRightOf="@+id/cargoText"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cargoText" />
+    <Button
+        android:id="@+id/cargoMinus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:textColor="#232323"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cargoText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/cargoText"
+        app:layout_constraintTop_toTopOf="@+id/cargoText" />
+
+    <!-- Hatches -->
+    <TextView
+        android:id="@+id/hatchText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/deepspace_element_separation"
+        android:textAlignment="center"
+        android:text="Hatches Scored\n0"
+        android:textColor="#232323"
+        android:textSize="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cargoText" />
+    <Button
+        android:id="@+id/hatchPlus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:textColor="#232323"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/hatchText"
+        app:layout_constraintLeft_toRightOf="@+id/hatchText"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/hatchText" />
+    <Button
+        android:id="@+id/hatchMinus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:textColor="#232323"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/hatchText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/hatchText"
+        app:layout_constraintTop_toTopOf="@+id/hatchText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
