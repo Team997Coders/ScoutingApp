@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".DeepSpace">
 
+    <!-- Auto Hab -->
     <TextView
         android:id="@+id/autoHabText"
         android:layout_width="wrap_content"
@@ -114,5 +115,40 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/hatchText"
         app:layout_constraintTop_toTopOf="@+id/hatchText" />
+
+    <TextView
+        android:id="@+id/climbText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/deepspace_element_separation"
+        android:textAlignment="center"
+        android:text="Climb Score\n0"
+        android:textColor="#232323"
+        android:textSize="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hatchText" />
+    <Button
+        android:id="@+id/climbPlus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:textColor="#232323"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/climbText"
+        app:layout_constraintLeft_toRightOf="@+id/climbText"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/climbText" />
+    <Button
+        android:id="@+id/climbMinus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:textColor="#232323"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/climbText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/climbText"
+        app:layout_constraintTop_toTopOf="@+id/climbText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
