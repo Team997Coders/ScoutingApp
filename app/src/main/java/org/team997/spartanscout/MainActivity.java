@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         openDeepSpace.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), DeepSpace.class);
+                Intent i = new Intent(getApplicationContext(), DeepSpaceRedo.class);
                 startActivity(i);
             }
         });
