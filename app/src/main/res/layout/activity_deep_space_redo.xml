@@ -16,10 +16,10 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/cargoText2"
+                android:id="@+id/autoHabTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cargo Shiut"
+                android:text="Auto Hab"
                 android:textSize="50dp"
                 android:layout_marginTop="20dp"
                 android:textColor="#232323"
@@ -27,11 +27,59 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
 
-            <!-- Cargo Data -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/cargoText2">
+                android:id="@+id/autoHabField"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/autoHabTitle">
+
+                <Button
+                    android:id="@+id/autoClimb0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:text="No Climb"
+                    android:textColor="@color/selectedText"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/autoClimb1"
+                    android:backgroundTint="@color/unselectedTint"
+                    android:text="Level 1"
+                    android:textColor="@color/unselectedText"
+                    android:layout_toRightOf="@id/autoClimb0" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/autoClimb2"
+                    android:backgroundTint="@color/unselectedTint"
+                    android:text="Level 2"
+                    android:textColor="@color/unselectedText"
+                    android:layout_toRightOf="@id/autoClimb1" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/cargoTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cargo Data"
+                android:textSize="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="#232323"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/autoHabField"/>
+
+            <!-- Low Cargo -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lowCargoField"
+                app:layout_constraintTop_toBottomOf="@id/cargoTitle">
 
                 <TextView
                     android:id="@+id/lowCargoText"
@@ -44,7 +92,7 @@
                     android:textColor="#232323"
                     android:textSize="35dp" />
                 <Button
-                    android:id="@+id/cargoPlus2"
+                    android:id="@+id/lowCargoPlus"
                     android:layout_width="45dp"
                     android:layout_height="wrap_content"
                     android:text="+"
@@ -52,23 +100,235 @@
                     android:layout_alignBottom="@id/lowCargoText"
                     android:layout_marginRight="10dp"/>
                 <Button
-                    android:id="@+id/cargoMinus2"
+                    android:id="@+id/lowCargoMinus"
                     android:layout_width="45dp"
                     android:layout_height="wrap_content"
                     android:text="-"
-                    android:layout_toLeftOf="@id/cargoPlus2"
-                    android:layout_alignBottom="@id/cargoPlus2"/>
+                    android:layout_toLeftOf="@id/lowCargoPlus"
+                    android:layout_alignBottom="@id/lowCargoPlus"/>
+
+            </RelativeLayout>
+
+            <!-- Mid Cargo -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/midCargoField"
+                app:layout_constraintTop_toBottomOf="@id/lowCargoField">
 
                 <TextView
                     android:id="@+id/midCargoText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/lowCargoText"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
                     android:text="Mid Cargo: 0"
                     android:textColor="#232323"
-                    android:textSize="25dp" />
+                    android:textSize="35dp" />
+                <Button
+                    android:id="@+id/midCargoPlus"
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:text="+"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignBottom="@id/midCargoText"
+                    android:layout_marginRight="10dp"/>
+                <Button
+                    android:id="@+id/midCargoMinus"
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:layout_toLeftOf="@id/midCargoPlus"
+                    android:layout_alignBottom="@id/midCargoPlus"/>
+
+            </RelativeLayout>
+
+            <!-- High Cargo -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/highCargoField"
+                app:layout_constraintTop_toBottomOf="@id/midCargoField">
+
+                <TextView
+                    android:id="@+id/highCargoText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="High Cargo: 0"
+                    android:textColor="#232323"
+                    android:textSize="35dp" />
+                <Button
+                    android:id="@+id/highCargoPlus"
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:text="+"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignBottom="@id/highCargoText"
+                    android:layout_marginRight="10dp"/>
+                <Button
+                    android:id="@+id/highCargoMinus"
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:layout_toLeftOf="@id/highCargoPlus"
+                    android:layout_alignBottom="@id/highCargoPlus"/>
+
+            </RelativeLayout>
+
+            <!-- CS Cargo -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/csCargoField"
+                app:layout_constraintTop_toBottomOf="@id/highCargoField">
+
+                <TextView
+                    android:id="@+id/csCargoText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="CS Cargo: 0"
+                    android:textColor="#232323"
+                    android:textSize="35dp" />
+                <Button
+                    android:id="@+id/csCargoPlus"
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:text="+"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignBottom="@id/csCargoText"
+                    android:layout_marginRight="10dp"/>
+                <Button
+                    android:id="@+id/csCargoMinus"
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:layout_toLeftOf="@id/csCargoPlus"
+                    android:layout_alignBottom="@id/csCargoPlus"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/hatchTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hatch Data"
+                android:textSize="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="#232323"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/csCargoField"/>
+
+            <!-- Low Hatch -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lowHatchField"
+                app:layout_constraintTop_toBottomOf="@id/hatchTitle">
+
+                <TextView
+                    android:id="@+id/lowHatchText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Low Hatch: 0"
+                    android:textColor="#232323"
+                    android:textSize="35dp" />
+                <Button
+                    android:id="@+id/lowHatchPlus"
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:text="+"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignBottom="@id/lowHatchText"
+                    android:layout_marginRight="10dp"/>
+                <Button
+                    android:id="@+id/lowHatchMinus"
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:layout_toLeftOf="@id/lowHatchPlus"
+                    android:layout_alignBottom="@id/lowHatchPlus"/>
+
+            </RelativeLayout>
+
+            <!-- Mid Hatch -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/midHatchField"
+                app:layout_constraintTop_toBottomOf="@id/lowHatchField">
+
+                <TextView
+                    android:id="@+id/midHatchText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Mid Hatch: 0"
+                    android:textColor="#232323"
+                    android:textSize="35dp" />
+                <Button
+                    android:id="@+id/midHatchPlus"
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:text="+"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignBottom="@id/midHatchText"
+                    android:layout_marginRight="10dp"/>
+                <Button
+                    android:id="@+id/midHatchMinus"
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:layout_toLeftOf="@id/midHatchPlus"
+                    android:layout_alignBottom="@id/midHatchPlus"/>
+
+            </RelativeLayout>
+
+            <!-- High Hatch -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/highHatchField"
+                app:layout_constraintTop_toBottomOf="@id/midHatchField">
+
+                <TextView
+                    android:id="@+id/highHatchText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="High Hatch: 0"
+                    android:textColor="#232323"
+                    android:textSize="35dp" />
+                <Button
+                    android:id="@+id/highHatchPlus"
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:text="+"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignBottom="@id/highHatchText"
+                    android:layout_marginRight="10dp"/>
+                <Button
+                    android:id="@+id/highHatchMinus"
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:layout_toLeftOf="@id/highHatchPlus"
+                    android:layout_alignBottom="@id/highHatchPlus"/>
 
             </RelativeLayout>
 

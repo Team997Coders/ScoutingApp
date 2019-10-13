@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="sysDark">#232323</color>
+    <color name="selectedTint">#2EAED9</color>
+    <color name="unselectedTint">#D6D7D7</color>
+    <color name="selectedText">#2EAED9</color>
+    <color name="unselectedText">#232323</color>
 </resources>
