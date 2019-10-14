@@ -15,6 +15,110 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <!-- Data Title -->
+            <TextView
+                android:id="@+id/dataTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Info"
+                android:textSize="50dp"
+                android:layout_marginTop="20dp"
+                android:textColor="#232323"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <!-- Meta Data -->
+            <RelativeLayout
+                android:id="@+id/infoField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dataTitle">
+
+                <!-- Team -->
+                <RelativeLayout
+                    android:id="@+id/teamField"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/teamTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="35dp"
+                        android:textColor="#232323"
+                        android:text="Team #" />
+                    <EditText
+                        android:id="@+id/teamNumber"
+                        android:layout_width="100dp"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/teamTitle"
+                        android:inputType="number"
+                        android:hint="0000" />
+                </RelativeLayout>
+
+                <!-- Match -->
+                <RelativeLayout
+                    android:id="@+id/matchField"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/teamField"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/matchTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="35dp"
+                        android:textColor="#232323"
+                        android:text="Match #" />
+                    <EditText
+                        android:id="@+id/matchNumber"
+                        android:layout_width="100dp"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/matchTitle"
+                        android:inputType="number"
+                        android:hint="0000" />
+
+                </RelativeLayout>
+
+                <!-- Alliance -->
+                <RelativeLayout
+                    android:id="@+id/allianceField"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/matchField"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/allianceTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="35dp"
+                        android:textColor="#232323"
+                        android:text="Alliance" />
+                    <Button
+                        android:id="@+id/allianceToggle"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/allianceTitle"
+                        android:layout_marginLeft="10dp"
+                        android:text="red" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <!-- Auto Hab Title -->
             <TextView
                 android:id="@+id/autoHabTitle"
                 android:layout_width="wrap_content"
@@ -25,8 +129,9 @@
                 android:textColor="#232323"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toBottomOf="@id/infoField" />
 
+            <!-- Auto Hab -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -38,7 +143,7 @@
                     android:id="@+id/autoClimb0"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:text="No Climb"
+                    android:text="None"
                     android:textColor="@color/selectedText"/>
 
                 <Button
@@ -61,18 +166,55 @@
 
             </RelativeLayout>
 
+            <!-- Penalties -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/penaltyField"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/autoHabField">
+
+                <TextView
+                    android:id="@+id/penaltyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Fouls Incurred: 0"
+                    android:textColor="#232323"
+                    android:textSize="35dp" />
+                <Button
+                    android:id="@+id/penaltyPlus"
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:text="+"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignBottom="@id/penaltyText"
+                    android:layout_marginRight="10dp"/>
+                <Button
+                    android:id="@+id/penaltyMinus"
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:layout_toLeftOf="@id/penaltyPlus"
+                    android:layout_alignBottom="@id/penaltyPlus"/>
+
+            </RelativeLayout>
+
+            <!-- Cargo Title -->
             <TextView
                 android:id="@+id/cargoTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cargo Data"
+                android:text="Cargo"
                 android:textSize="50dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:textColor="#232323"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/autoHabField"/>
+                app:layout_constraintTop_toBottomOf="@id/penaltyField"/>
 
             <!-- Low Cargo -->
             <RelativeLayout
@@ -214,11 +356,12 @@
 
             </RelativeLayout>
 
+            <!-- Hatch Title -->
             <TextView
                 android:id="@+id/hatchTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hatch Data"
+                android:text="Hatch"
                 android:textSize="50dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
@@ -329,6 +472,143 @@
                     android:text="-"
                     android:layout_toLeftOf="@id/highHatchPlus"
                     android:layout_alignBottom="@id/highHatchPlus"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/limitedField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/highHatchField">
+
+                <TextView
+                    android:id="@+id/limitedText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#232323"
+                    android:textSize="35dp"
+                    android:text="Limited" />
+                <Button
+                    android:id="@+id/limitedToggle"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/limitedText"
+                    android:text="No" />
+
+            </RelativeLayout>
+
+            <!-- Defense Title -->
+            <TextView
+                android:id="@+id/defenseTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Defense"
+                android:textSize="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="#232323"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/limitedField"/>
+
+            <!-- Defense -->
+            <RelativeLayout
+                android:id="@+id/defenseField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/defenseTitle">
+
+                <Button
+                    android:id="@+id/defense0"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="None"
+                    android:textColor="@color/selectedText"/>
+
+                <Button
+                    android:id="@+id/defense1"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/defense0"
+                    android:text="Got in the way"
+                    android:textColor="@color/unselectedText"/>
+
+                <Button
+                    android:id="@+id/defense2"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/defense1"
+                    android:text="Slowed Play"
+                    android:textColor="@color/unselectedText"/>
+
+                <Button
+                    android:id="@+id/defense3"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/defense2"
+                    android:text="Shut Down"
+                    android:textColor="@color/unselectedText"/>
+
+            </RelativeLayout>
+
+            <!-- Climb Title -->
+            <TextView
+                android:id="@+id/climbTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Climb"
+                android:textSize="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="#232323"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/defenseField"/>
+
+            <!-- Defense -->
+            <RelativeLayout
+                android:id="@+id/climbField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/climbTitle">
+
+                <Button
+                    android:id="@+id/climb0"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="No Climb"
+                    android:textColor="@color/selectedText"/>
+
+                <Button
+                    android:id="@+id/climb1"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/climb0"
+                    android:text="Level 1"
+                    android:textColor="@color/unselectedText"/>
+
+                <Button
+                    android:id="@+id/climb2"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/climb0"
+                    android:text="Level 2"
+                    android:textColor="@color/unselectedText"/>
+
+                <Button
+                    android:id="@+id/climb3"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/climb0"
+                    android:layout_toRightOf="@id/climb2"
+                    android:text="Level 3"
+                    android:textColor="@color/unselectedText"/>
 
             </RelativeLayout>
 
