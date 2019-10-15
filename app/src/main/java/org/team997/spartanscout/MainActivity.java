@@ -8,9 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import org.team997.spartanscout.transfer.InfoTransfer;
+
 public class MainActivity extends AppCompatActivity {
 
-    private Button openDeepSpace;
+    private Button openDeepSpace, write;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), DeepSpaceRedo.class);
                 startActivity(i);
+            }
+        });
+
+        write = (Button) findViewById(R.id.write);
+        write.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                InfoTransfer.WrtieStoredData(getApplicationContext());
             }
         });
 

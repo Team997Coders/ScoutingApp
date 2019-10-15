@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 
 import com.google.gson.Gson;
 
-import org.team997coders.spartanlib.scouting.DeepSpaceData;
+import org.team997coders.spartanlib.scouting.data.DeepSpaceData;
 
 import java.io.File;
 import java.io.FileWriter;

@@ -2,15 +2,15 @@ package org.team997.spartanscout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.res.ColorStateList;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.Display;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import org.team997coders.spartanlib.scouting.DeepSpaceData;
+import org.team997.spartanscout.transfer.InfoTransfer;
+import org.team997coders.spartanlib.scouting.data.DeepSpaceData;
 
 public class DeepSpaceRedo extends AppCompatActivity {
 
@@ -32,7 +32,8 @@ public class DeepSpaceRedo extends AppCompatActivity {
             penaltyP, penaltyM,
             autoHab0, autoHab1, autoHab2,
             defense0, defense1, defense2, defense3,
-            climb0, climb1, climb2, climb3, limitedToggle, allianceToggle;
+            climb0, climb1, climb2, climb3,
+            limitedToggle, allianceToggle, saveData, saveDataAndExit, exitButton;
 
     private TextView lowCargoT, midCargoT, highCargoT, csCargoT,
             penaltyT, lowHatchT, midHatchT, highHatchT;
@@ -387,5 +388,56 @@ public class DeepSpaceRedo extends AppCompatActivity {
                 }
             }
         });
+
+        // Write and exit
+
+        saveData = (Button) findViewById(R.id.saveData);
+        saveData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                InfoTransfer.StoreData(getData());
+                Intent current = getIntent();
+                finish();
+                startActivity(current);
+            }
+        });
+        saveDataAndExit = (Button) findViewById(R.id.saveDataAndExit);
+        saveDataAndExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                InfoTransfer.StoreData(getData());
+                Intent selection = new Intent(getApplicationContext(), MainActivity.class);
+                finish();
+                startActivity(selection);
+            }
+        });
+        exitButton = (Button) findViewById(R.id.exit);
+        exitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent selection = new Intent(getApplicationContext(), MainActivity.class);
+                finish();
+                startActivity(selection);
+            }
+        });
+    }
+
+    public DeepSpaceData getData() {
+        DeepSpaceData dat = new DeepSpaceData();
+        dat.teamNumber = team;
+        dat.matchNumber = match;
+        dat.alliance = alliance;
+        dat.lowCargo = lowCargo;
+        dat.midCargo = midCargo;
+        dat.highCargo = highCargo;
+        dat.csCargo = csCargo;
+        dat.lowHatch = lowHatch;
+        dat.midHatch = midHatch;
+        dat.highHatch = highHatch;
+        dat.defense = defense;
+        dat.climb = climb;
+        dat.autoHab = autoHab;
+        dat.penalty = penalties;
+        return dat;
     }
 }
